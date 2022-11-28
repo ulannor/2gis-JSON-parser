@@ -77,10 +77,6 @@ def url_generator(jsondict, pathdict):
 
 
 def json_processer(filepath):
-    """
-
-    :rtype: object
-    """
     data = jloadfunc(filepath)
     datalist = []
     for i in data:
