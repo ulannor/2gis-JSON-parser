@@ -3,6 +3,7 @@ import pandas as pd
 
 
 '''Enter the name of the file with JSON data'''
+
 filename: str = 'нотариальные услуги'
 
 filepath = f'.\\datasource\\{filename}.csv'
