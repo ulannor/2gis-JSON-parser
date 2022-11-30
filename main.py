@@ -1,7 +1,6 @@
 import parser_functions as pf
 import output_functions as of
 
-'''Enter the name of the file with JSON data'''
 
 filename: str = 'нотариальные услуги'           # name of source data file
 

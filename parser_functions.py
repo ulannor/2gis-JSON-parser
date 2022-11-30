@@ -12,11 +12,16 @@ def jloadfunc(filepath):
 
 def rubrics_iterator(jsondict, pathdict):
     dctlist = jsondict.get('rubrics', '')
-    result = []
+    allrubs = []
+    primrub = []
     for i in dctlist:
         rubric = i.get('name', '')
-        result.append(rubric)
-    pathdict['rubrics'] = result
+        allrubs.append(rubric)
+        if i.get('kind', '') == 'primary':
+            primrub.append(i.get('name', ''))
+    pathdict['primary rubric'] = primrub
+    pathdict['rubrics'] = allrubs
+
 
 
 def adm_div_iterator(jsondict, pathdict):

@@ -3,12 +3,12 @@ import json
 
 def convert_to_csv(dctlist, filename):
     df = pd.DataFrame(dctlist)
-    column_order = df.columns[:8].tolist() + sorted(df.columns[8:].tolist())
+    column_order = df.columns[:9].tolist() + sorted(df.columns[9:].tolist())
     df_sorted = df[column_order]
     df_sorted.to_csv(f'.\\output\\{filename}.csv', index=False)
     df_sorted.to_excel(f'.\\output\\{filename}.xlsx', index=False)
 
-def log_appender(dctlist)
+def log_appender(dctlist):
     try:
         with open('.\\log\\log.json', 'r') as in_file:
             logdata = json.load(in_file)
@@ -21,3 +21,9 @@ def log_appender(dctlist)
 
     with open('.\\log\\log.json', "w") as file:
         json.dump(undupl_logdata, file, ensure_ascii=False)
+
+    df = pd.DataFrame(undupl_logdata)
+    column_order = df.columns[:9].tolist() + sorted(df.columns[9:].tolist())
+    df_sorted = df[column_order]
+    df_sorted.to_csv(f'.\\merged\\merged.csv', index=False)
+    df_sorted.to_excel(f'.\\merged\\merged.xlsx', index=False)
