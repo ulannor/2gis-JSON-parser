@@ -11,4 +11,4 @@ dctlist = pf.json_processer(filepath)           # list of dictionaries retrieved
 of.convert_to_csv(dctlist, filename)            # creates Excel and CSV with the dataframe from the list
 
 of.log_appender(dctlist)                        # optional: updates the log.json with the list and deduplicates itself based on 2GIS URL
-                                                # and creates 'merged' Excel and CSV files from the log.json
+                                                # and creates Excel and CSV from it in the 'merged' directory
