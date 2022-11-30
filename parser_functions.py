@@ -1,7 +1,7 @@
 import json
 from urllib.parse import urlparse
 from collections import Counter, defaultdict
-from iteration_utilities import unique_everseen
+
 
 
 def jloadfunc(filepath):
@@ -91,5 +91,5 @@ def json_processer(filepath):
         contacts_iterator(i, dct)
         url_generator(i, dct)
         datalist.append(dct)
-    res_datalist = list(unique_everseen(datalist))
-    return res_datalist
+        res_lst = list({dct['2GIS URL']: dct for dct in datalist}.values())
+    return res_lst
