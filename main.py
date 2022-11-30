@@ -3,12 +3,12 @@ import output_functions as of
 
 '''Enter the name of the file with JSON data'''
 
-filename: str = 'нотариальные услуги'
+filename: str = 'нотариальные услуги'           # name of source data file
 
-filepath = f'.\\datasource\\{filename}.csv'     #Filepath is created
+filepath = f'.\\datasource\\{filename}.csv'     # filepath is created
 
-dctlist = pf.json_processer(filepath)           #List of dictionaries with JSON data
+dctlist = pf.json_processer(filepath)           # list of dictionaries retrieved from original JSON
 
-of.convert_to_csv(dctlist, filename)            #Creates Excel and CSV with the dataframe from the list
+of.convert_to_csv(dctlist, filename)            # creates Excel and CSV with the dataframe from the list
 
-of.log_appender(dctlist)                        #Optional: updates the log.json with the list and deduplicates itself based on 2GIS URL
+of.log_appender(dctlist)                        # optional: updates the log.json with the list and deduplicates itself based on 2GIS URL
